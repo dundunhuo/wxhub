@@ -1,0 +1,37 @@
+hbase 表 spider_html_result（现网库）
+http://master:8983/solr/#/hbase_spider/query（hbase映射）
+结构｛
+sr1:currentDepth --页面所在层数
+sr1:localdomain     -- url中的 域名   www.a.b.com
+sr1:pUrl                -- 父页面url
+sr1:topdomain       --顶级夜明   b.com 
+sr1:tophtml           --带标签的html 源码
+sr1:toptitle           --网页标题
+sr1:websiteInOut  --站内站外标识 0是站内 1站外
+sr1:ip_addr          --ip
+sr1:country          --国家
+sr1:province         --省
+sr1:city                --市
+sr1:county            --县
+sr1:ip_company     --运营商
+sr1:borderInOut  --页面打开速度 单位ms
+sr1:monitor_time  --更新时间
+sr1:tophtml_content      --去掉标签的网页内容
+｝
+
+需求 ：
+1、分布式，广度优先；
+2、可以配置爬取层数；
+3、可以设置 是否渲染；
+4、可以添加过滤规则，不抓取某些域名；
+5、传入参数【url文件源hdfs路径，输入hbase表名，抓取层数，是否渲染，solr地址】
+6、如果输入的表不存在先创建；
+7、同时存hbase表的时候 在 solr也存一份；
+8、参数调用 编写一个web界面，可以提交任务，提交之后可以查询处理量，进度；
+
+Scrapy
+scrapy-redis
+selenium   webdriver
+
+开发：
+上传 svn地址：https://192.168.2.214:8443/svn/NetManagerProject/互联网网站态势感知平台/branches/crawler-module

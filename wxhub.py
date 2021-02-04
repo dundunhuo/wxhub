@@ -421,7 +421,7 @@ def main(chrome):
     #会过期, 重新登录后需要重新取得
     if not chrome:
         if os.path.isfile('chromedriver'):
-            chrome = 'chromedriver'
+            chrome = 'D:\Program files\chromedriver_win32\chromedriver.exe'
         else:
             chrome = input('输入webchrome:').strip()
     driver = webdriver.Chrome(executable_path=chrome)
